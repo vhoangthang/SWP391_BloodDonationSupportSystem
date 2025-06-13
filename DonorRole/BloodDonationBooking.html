@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Đăng ký hiến máu</title>
+  <link rel="stylesheet" href="blooddonationBooking.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <button class="tab active" onclick="switchTab('tab1')">🗓️ Thời gian & nhóm máu</button>
+      <button class="tab" onclick="switchTab('tab2')">📄 Phiếu đăng ký hiến máu</button>
+    </div>
+    <div class="main">
+      <div id="tab1" class="container">
+        <div class="section">
+          <h3>Chọn ngày</h3>
+          <div class="date-picker-wrapper">
+            <div class="date-picker" id="datePicker"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Nhóm máu hiến</h3>
+          <p>Địa điểm: Khu CNC, Phường Long Thạnh Mỹ, TP Thủ Đức, TP HCM.</p>
+          <div class="blood-types">
+            <button class="btn-A">Nhóm máu A</button>
+            <button class="btn-B">Nhóm máu B</button>
+            <button class="btn-AB">Nhóm máu AB</button>
+            <button class="btn-O">Nhóm máu O</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Chọn khung giờ bạn sẽ đến hiến máu</h3>
+          <p>Thời gian nhận hồ sơ:</p>
+          <div class="time-slots">
+            <button>07:00 - 11:00</button>
+            <button>13:00 - 17:00</button>
+          </div>
+        </div>
+
+        <button class="submit-btn" onclick="window.location.href='DonationBookingForm.html'">Tiếp tục</button>
+      </div>
+
+      <div id="tab2" class="container hidden">
+        
+        <h1>Thông tin tóm tắt đăng ký hiến máu</h1>
+        
+        <!-- QR và thông tin cá nhân -->
+        <div class="section qr-code">
+          <h2>Thông tin đăng ký hiến máu</h2>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?data=042205004895&size=160x160" alt="QR Code">
+          <div>Mã giấy tờ tùy thân: <strong>042205004895</strong></div>
+          <div id="qrTimeInfo">Thời gian:...</div>
+          <div>Địa điểm hiến: <strong>Khu CNC, Phường Long Thạnh Mỹ, Thủ Đức, TP HCM</strong></div>
+          <button class="qr-button">Tải mã QR</button>
+        </div>
+        
+        <div class="section">
+          <h2>Thông tin cá nhân</h2>
+          <div class="info-row"><span class="label">Họ và tên:</span><span class="value">NGUYỄN VĂN A</span></div>
+          <div class="info-row"><span class="label">Số CCCD:</span><span class="value">042205004895</span></div>
+          <div class="info-row"><span class="label">Ngày sinh:</span><span class="value">01/01/1990</span></div>
+          <div class="info-row"><span class="label">Giới tính:</span><span class="value">Nam</span></div>
+          <div class="info-row"><span class="label">Nghề nghiệp:</span><span class="value">Nhân viên</span></div>
+          <div class="info-row"><span class="label">Nhóm máu:</span><span class="value">||</span></div>
+        </div>
+        
+        <div class="section">
+          <h2>Thông tin liên hệ</h2>
+          <div class="info-row"><span class="label">Địa chỉ liên hệ:</span><span class="value">Vinhome Grand Park S106, Phường
+              Long Thạnh Mỹ, TP Thủ Đức, TP HCM</span></div>
+          <div class="info-row"><span class="label">Điện thoại di động:</span><span class="value">0366723474</span></div>
+        </div>
+        
+        <!-- Tóm tắt form 1 -->
+        <div class="section" id="form1Summary">
+          <h2>🗓️ Thời gian & nhóm máu</h2>
+          <p><span class="label">Ngày:</span> <span id="selectedDate">...</span></p>
+          <p><span class="label">Khung giờ:</span> <span id="selectedTime">...</span></p>
+          <p><span class="label">Nhóm máu:</span> <span id="selectedBloodType">...</span></p>
+        </div>
+        
+        <!-- Tóm tắt form 2 -->
+        <div class="section" id="form2Summary">
+          <h2>📄 Phiếu đăng ký hiến máu</h2>
+          <div id="questionsContainer">
+            <!-- Câu hỏi và câu trả lời sẽ render ở đây -->
+          </div>
+        </div>
+         <button onclick="clearAllData()" class="clear-btn">Xoá phiếu đăng ký</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="BloodDonationBooking.js"></script>
+</body>
+</html>
