@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiếu đăng ký nhận máu</title>
+    <link rel="stylesheet" href="CreateRequest.css" />
+    <script src="Age.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Hệ thống hiến máu</h2>
+            <nav>
+                <ul>
+                    <li class="active">Tạo yêu cầu</li>
+                    <li>Danh sách nhận máu</li>
+                    <li>Chi tiết đơn nhận máu</li>
+                    <li><a href="Notice.html">Thông báo</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1>Phiếu đăng ký nhận máu</h1>
+                <button class="user-btn">👤 CSYT</button>
+            </div>
+
+            <form class="form">
+                <section class="section">
+                    <h3>Chọn Hình Thức Nhận Máu</h3>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="type" checked />
+                            <span class="radio-label">
+                                <strong>Nhận máu thông thường</strong><br />
+                                Nhận máu thông qua cơ sở y tế trung gian.<br />
+                                Thời gian xử lý: ~1 giờ
+                            </span>
+                        </label>
+                        <label>
+                            <input type="radio" name="type" />
+                            <span class="radio-label">
+                                <strong>Nhận máu khẩn cấp</strong><br />
+                                Có thể nhận máu ngay lập tức.<br />
+                                Thời gian xử lý: ~15 phút
+                            </span>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3>Điền thông tin cá nhân</h3>
+                    <div class="grid">
+                        <input type="text" placeholder="Họ và tên" required />
+                        <br />
+                        <select id="age" name="age" required>
+                            <option value="">-- Chọn tuổi --</option>
+                        </select>
+                        
+                        <input type="number" placeholder="Số điện thoại" required />
+                        <select required>
+                            <option>Chọn giới tính</option>
+                            <option>Nam</option>
+                            <option>Nữ</option>
+                            <option>Khác</option>
+                        </select>
+                        <input type="number" placeholder="CCCD/CMND" required />
+                        <select required>
+                            <option>Chọn nhóm máu</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                        <select required>
+                            <option>Chọn lượng máu</option>
+                            <option>1cc (350ml)</option>
+                            <option>1.5cc (500ml)</option>
+                            <option>0.75cc (250ml)</option>
+                        </select>
+                        <select required>
+                            <option>Thành phần</option>
+                            <option>Tương hợp</option>
+                            <option>Không tương hợp</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Lý do" rows="3" required></textarea>
+                </section>
+                <button class="submit-btn" type="submit">Gửi đăng ký</button>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>
