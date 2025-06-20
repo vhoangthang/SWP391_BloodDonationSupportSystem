@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Tìm người hiến máu gần nhất";
+}
+
+<h2>Tìm người hiến máu gần nhất</h2>
+
+<form method="post" asp-action="Result">
+    <div class="form-group">
+        <label>Nhóm máu (ID):</label>
+        <input type="number" name="bloodTypeId" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>Vị trí (Từ khóa địa chỉ):</label>
+        <input type="text" name="locationKeyword" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+</form>

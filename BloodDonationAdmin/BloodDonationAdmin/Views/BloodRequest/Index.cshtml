@@ -1,0 +1,34 @@
+﻿@model List<BloodDonationAdmin.Models.BloodRequest>
+
+<h2>Danh sách yêu cầu nhận máu</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Bệnh nhân</th>
+            <th>Lý do</th>
+            <th>Ngày yêu cầu</th>
+            <th>Số lượng (ml)</th>
+            <th>Khẩn cấp</th>
+            <th>Tương thích</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PatientName</td>
+                <td>@item.Reason</td>
+                <td>@item.RequestDate.ToShortDateString()</td>
+                <td>@item.Quantity</td>
+                <td>@(item.IsEmergency ? "Có" : "Không")</td>
+                <td>@(item.IsCompatible ? "Có" : "Không")</td>
+                <td>
+                    <a class="btn btn-success btn-sm" href="/BloodRequest/Approve/@item.BloodRequestId">Duyệt</a>
+                    <a class="btn btn-danger btn-sm" href="/BloodRequest/Reject/@item.BloodRequestId">Từ chối</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
