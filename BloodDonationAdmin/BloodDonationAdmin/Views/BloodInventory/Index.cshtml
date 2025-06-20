@@ -1,0 +1,32 @@
+﻿@model List<BloodDonationAdmin.Models.BloodInventory>
+
+<h2>Quản lý kho máu</h2>
+
+<a class="btn btn-primary mb-3" href="/BloodInventory/Create">Thêm kho máu</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nhóm máu (ID)</th>
+            <th>Ngân hàng máu (ID)</th>
+            <th>Số lượng (ml)</th>
+            <th>Ngày cập nhật</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BloodTypeID</td>
+                <td>@item.BloodBankID</td>
+                <td>@item.Quantity</td>
+                <td>@item.LastUpdated.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/BloodInventory/Edit/@item.InventoryID">Sửa</a>
+                    <a class="btn btn-danger btn-sm" href="/BloodInventory/Delete/@item.InventoryID">Xoá</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

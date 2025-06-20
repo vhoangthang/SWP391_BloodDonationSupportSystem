@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - BloodDonationAdmin</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <!-- CSS tách riêng -->
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập hệ thống</h2>
+        <form method="post">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" name="username" id="username" required />
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" name="password" id="password" required />
+
+            <button type="submit">Đăng nhập</button>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <p class="error-message">@ViewBag.Message</p>
+        }
+    </div>
+</body>
+</html>
+
+
